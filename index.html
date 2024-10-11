@@ -25,14 +25,15 @@
   <!-- Button to upload the image -->
   <button id="upload" style="display:none;">Upload Image</button>
 
-  <h2 id="result" style="display:none;"></h2>
+  <!-- Div to display detected mood -->
+  <div id="moodDisplay" style="margin-top: 20px;"></div>
 
   <script>
     const video = document.getElementById('webcam');
     const canvas = document.getElementById('snapshot');
     const captureButton = document.getElementById('capture');
     const uploadButton = document.getElementById('upload');
-    const resultDisplay = document.getElementById('result');
+    const moodDisplay = document.getElementById('moodDisplay');
     const context = canvas.getContext('2d');
 
     // Ask for webcam access
@@ -55,12 +56,10 @@
       uploadButton.style.display = 'inline-block';
     });
 
-    // Upload the image and analyze expression
+    // Upload the captured image
     uploadButton.addEventListener('click', () => {
-      // Convert the canvas image to base64 (simulating image upload)
       const imageData = canvas.toDataURL('image/png');
 
-      // Send the image data to the backend
       fetch('/analyze-expression', {
         method: 'POST',
         headers: {
@@ -70,9 +69,8 @@
       })
       .then(response => response.json())
       .then(data => {
-        // Display the detected mood
-        resultDisplay.innerText = `Detected Mood: ${data.mood}`;
-        resultDisplay.style.display = 'block'; // Show result
+        // Show the detected mood on the web page
+        moodDisplay.innerText = `Detected Mood: ${data.mood}`;
       })
       .catch(error => {
         console.error('Error uploading the image:', error);
