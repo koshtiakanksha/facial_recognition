@@ -1,6 +1,6 @@
 # **Emotion Recognition using FER2013 Dataset**
 
-![image](https://www.upwork.com/services/product/development-it-realtime-facial-emotion-recognition-detection-ai-web-or-mobile-app-1724687931832266752)
+![Emotion Recognition](https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1700033401/catalog/1724687931832266752/wptbrlspfn9mwbguki84.jpg)
 ## **Introduction**
 Emotion recognition is a significant task in computer vision that involves identifying human emotions based on facial expressions. This project leverages the FER2013 dataset to build a deep learning model capable of classifying images into seven emotions: **Angry, Disgust, Fear, Happy, Sad, Surprise, and Neutral**.
 
